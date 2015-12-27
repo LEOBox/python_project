@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+	<ul class="entries">
+		{% for entry in entries %}
+		<li><h2>{{ entry.job }}</h2></li>
+		<li><a href="delete/{{ entry.job }}">delete</a></li>
+		{% else %}
+		<li>Nothing</li>
+		{% endfor %}
+	</ul>
+	<div>
+		<a href="create">Create</a>
+	</div>
+{% endblock %}

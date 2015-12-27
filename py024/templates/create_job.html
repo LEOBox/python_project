@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{ url_for('addEntry')}}" method="post" class="add-entry">
+		<dl>
+			<dt>UserL</dt>
+			<dd><input type="text" size="30" name="job"></dd>
+			<dd><input type="submit" value="POST"></dd>
+		</dl>
+</form>
+{% endblock %}

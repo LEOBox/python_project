@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+	<form action="{{ url_for('addEntry')}}" method="post" class="add-entry">
+		<dl>
+			<dt>UserL</dt>
+			<dd><input type="text" size="30" name="user"></dd>
+			<dt>Comment</dt>
+			<dd><textarea name="comment" rows="5" cols="20"></textarea></dd>
+			<dd><input type="submit" value="POST"></dd>
+		</dl>
+	</form>
+	<ul class="entries">
+		{% for entry in entries %}
+		<li><h2>{{ entry.user }}</h2></li>
+		<li>{{ entry.comment|safe }}</li>
+		{% else %}
+		<li>Nothing</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
